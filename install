@@ -109,3 +109,5 @@ passwd ${user}
 sed -i 's/# %wheel/%wheel/g' /etc/sudoers
 #exit
 exit
+
+./demenu.sh
