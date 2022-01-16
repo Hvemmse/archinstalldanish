@@ -1,7 +1,7 @@
 
 bios () {
 clear
-lsblk -d
+lsblk -do NAME,MODEL,SIZE
 
 echo Indtast drev som /dev/sdx dvs a for x eller b for x
 
@@ -34,7 +34,7 @@ sudo mount ${part}2 /mnt/boot
 
 efi () {
 clear 
-lsblk -d
+lsblk -do NAME,MODEL,SIZE 
 
 echo Intast drev som /dev/sdx dvs a for x eller b for x
 
