@@ -1,8 +1,8 @@
 #!/bin/bash
-
-sudo pacman -S openbox ttf-dejavu ttf-liberation nitrogen obconf dmenu menumaker
+timedatectl set-ntp 1
+sudo pacman -S openbox ttf-dejavu ttf-liberation nitrogen obconf dmenu menumaker nemo xfce-session lightdm lightdm-gtk-greeter xfce-terminal xfce-settings
 
 sudo cp /etc/X11/xinit/xinitrc ~/.xinitrc
 mmaker openbox3
-timedatectl set-ntp 1
+
 
