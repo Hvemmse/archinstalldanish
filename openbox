@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 sudo pacman -S openbox ttf-dejavu ttf-liberation nitrogen obconf dmenu menumaker
 
