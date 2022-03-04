@@ -2,7 +2,7 @@
 # 
 
 PS3='Vælg Desktop enviroment: '
-options=("Cinnamon" "Kde" "Gnome" "Qtile" "Xfce4" "Afslut")
+options=("Cinnamon" "Kde" "Gnome" "Qtile" "Xfce4" "Openbox" "Afslut")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -29,8 +29,14 @@ do
         "Xfce4")
             echo "xfce"
             ./xfce4
-			break
+	    break
+            ;;
+	"Openbox")
+            echo "Openbox"
+            ./openbox
+	    break
             ;;       
+
         "Afslut")
             break
             ;;
