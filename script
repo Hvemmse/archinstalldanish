@@ -1,0 +1,16 @@
+#!/bin/bash
+
+
+
+   dialog --ok-label 'Next' --prgbox ' Disk in System ' 'lsblk -d'  20 50 || sudo pacman -Sy dialog 
+
+   dialog --ok-label 'Next' --prgbox  ' Memory in System ' 'free -h'  20 90 
+
+   dialog --ok-label 'Next' --prgbox  ' Space used in System ' 'df -h'  20 100 
+
+   dialog --ok-label 'Next' --prgbox  ' Uptime ' 'uptime'  20 100 
+
+   dialog --ok-label 'Next' --prgbox  ' The last Reboots ' 'last reboot | head -n 5'  20 100 
+
+   dialog --yesno 'Refresh pkg? ' 10 20 && dialog --ok-label 'Next' --prgbox  ' Refresh pkg  ' 'sudo pacman -Sy && echo Done '  20 100 
+ 
