@@ -1,16 +1,19 @@
 #!/bin/bash
 
+# Display a dialog box showing information about the disks in the system
+dialog --ok-label 'Next' --prgbox ' Disk in System ' 'lsblk -d' 20 50 || sudo pacman -Sy dialog
 
+# Display a dialog box showing information about the memory in the system
+dialog --ok-label 'Next' --prgbox ' Memory in System ' 'free -h' 20 90
 
-   dialog --ok-label 'Next' --prgbox ' Disk in System ' 'lsblk -d'  20 50 || sudo pacman -Sy dialog 
+# Display a dialog box showing information about the space used in the system
+dialog --ok-label 'Next' --prgbox ' Space used in System ' 'df -h' 20 100
 
-   dialog --ok-label 'Next' --prgbox  ' Memory in System ' 'free -h'  20 90 
+# Display a dialog box showing the uptime of the system
+dialog --ok-label 'Next' --prgbox ' Uptime ' 'uptime' 20 100
 
-   dialog --ok-label 'Next' --prgbox  ' Space used in System ' 'df -h'  20 100 
+# Display a dialog box showing the information about the last reboots of the system
+dialog --ok-label 'Next' --prgbox ' The last Reboots ' 'last reboot | head -n 5' 20 100
 
-   dialog --ok-label 'Next' --prgbox  ' Uptime ' 'uptime'  20 100 
-
-   dialog --ok-label 'Next' --prgbox  ' The last Reboots ' 'last reboot | head -n 5'  20 100 
-
-   dialog --yesno 'Refresh pkg? ' 10 20 && dialog --ok-label 'Next' --prgbox  ' Refresh pkg  ' 'sudo pacman -Sy && echo Done '  20 100 
- 
+# Ask the user if they want to refresh packages, and perform the update if the answer is yes
+dialog --yesno 'Refresh pkg? ' 10 20 && dialog --ok-label 'Next' --prgbox ' Refresh pkg ' 'sudo pacman -Sy && echo Done ' 20 100
